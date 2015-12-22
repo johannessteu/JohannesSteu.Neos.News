@@ -1,0 +1,10 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'JohannesSteu.Neos.News': TRUE
+    nodeTypes:
+      groups:
+        news:
+          position: 180
+          label: 'News'

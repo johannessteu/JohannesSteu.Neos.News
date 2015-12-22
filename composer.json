@@ -1,0 +1,14 @@
+{
+    "name": "johannessteu/neos-news",
+    "type": "typo3-flow-package",
+    "description": "Neos CMS news package based on flowpack/listable",
+    "require": {
+        "typo3/neos": "*",
+        "flowpack/listable": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "JohannesSteu\\Neos\\News": "Classes"
+        }
+    }
+}
