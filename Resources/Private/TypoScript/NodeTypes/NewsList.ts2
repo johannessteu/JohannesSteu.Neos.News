@@ -1,0 +1,22 @@
+
+prototype(JohannesSteu.Neos.News:NewsList) >
+prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNode) {
+    @override.wrapClass = 'news-list-block'
+
+    @override.listTitleClass = 'news-list-block__title'
+    @override.archiveLinkClass = 'news-list-block__archive-link'
+
+    prototype(Flowpack.Listable:Listable) {
+        @context.listClass = 'news-list'
+        @context.itemClass = 'news-list__item'
+    }
+
+}
+
+prototype(JohannesSteu.Neos.News:NewsShort) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/News.html'
+    sectionName = "newsTeaser"
+
+    title = ${q(node).property('title')}
+    teaser = ${q(node).property('teaser')}
+}

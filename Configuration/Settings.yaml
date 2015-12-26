@@ -8,3 +8,7 @@ TYPO3:
         news:
           position: 180
           label: 'News'
+    userInterface:
+      translation:
+        autoInclude:
+          'JohannesSteu.Neos.News': ['NodeTypes/*']

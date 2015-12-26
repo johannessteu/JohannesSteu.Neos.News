@@ -1,0 +1,31 @@
+
+prototype(JohannesSteu.Neos.News:NewsDetail) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/News.html'
+    sectionName = 'news'
+
+    // General properties
+    publishDate = ${q(node).property('publishDate')}
+    archiveDate = ${q(node).property('archiveDate')}
+
+    title = ${q(node).property('title')}
+    teaser = ${q(node).property('teaser')}
+
+    isImportant = ${q(node).property('important')}
+
+    categories = ${q(node).property('categories')}
+    relatedNews = ${q(node).property('related')}
+    tags = ${String.split(q(node).property('tags'), ",")}
+
+    content = TYPO3.Neos:ContentCollection{
+        nodePath = 'content'
+    }
+}
+
+# extend primary content
+prototype(TYPO3.Neos:PrimaryContent) {
+    news {
+        @position = 'before default'
+        condition = ${q(node).is('[instanceof JohannesSteu.Neos.News:News]')}
+        type = 'JohannesSteu.Neos.News:NewsDetail'
+    }
+}

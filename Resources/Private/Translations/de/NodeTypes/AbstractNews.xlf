@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="JohannesSteu.Neos.News" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>News</source>
+        <target xml:lang="de">News</target>
+      </trans-unit>
+      <trans-unit id="groups.configuration" xml:space="preserve">
+        <source>Configuration</source>
+        <target xml:lang="de">Konfiguration</target>
+      </trans-unit>
+      <trans-unit id="groups.configuration" xml:space="preserve">
+        <source>Related</source>
+        <target xml:lang="de">Verwandt</target>
+      </trans-unit>
+      <trans-unit id="groups.related" xml:space="preserve">
+        <source>Related</source>
+        <target xml:lang="de">Verwandt</target>
+      </trans-unit>
+      <trans-unit id="groups.document" xml:space="preserve">
+        <source>Page properties</source>
+        <target xml:lang="de">Seiteneigenschaften</target>
+      </trans-unit>
+      <trans-unit id="properties.archiveDate" xml:space="preserve">
+        <source>Archive date</source>
+        <target xml:lang="de">Archivdatum</target>
+      </trans-unit>
+      <trans-unit id="properties.publishDate" xml:space="preserve">
+        <source>Publish date</source>
+        <target xml:lang="de">Veröffentlicht am</target>
+      </trans-unit>
+      <trans-unit id="properties.important" xml:space="preserve">
+        <source>Highlight</source>
+        <target xml:lang="de">Highlight</target>
+      </trans-unit>
+      <trans-unit id="properties.related" xml:space="preserve">
+        <source>Related news</source>
+        <target xml:lang="de">Verwandte News</target>
+      </trans-unit>
+      <trans-unit id="properties.categories" xml:space="preserve">
+        <source>Categories</source>
+        <target xml:lang="de">Kategorien</target>
+      </trans-unit>
+      <trans-unit id="properties.tags" xml:space="preserve">
+        <source>Tags</source>
+        <target xml:lang="de">Tags</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

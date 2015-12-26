@@ -1,0 +1,26 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:section name="news">
+    <div class="news-item {f:if(condition:'{isImportant}', then:'news-item--important')}" itemscope itemtype="http://schema.org/NewsArticle">
+        <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
+
+        <h1 class="news-item__title" itemprop="headline">
+            <neos:contentElement.editable property="title" />
+        </h1>
+
+        <p class="news-tem__teaser-text" itemprop="description"><neos:contentElement.editable property="teaser" /></p>
+
+        <div class="news-item__content">
+            {content -> f:format.raw()}
+        </div>
+    </div>
+</f:section>
+
+<f:section name="newsTeaser">
+    <div class="news-item-teaser">
+        <h3 class="news-item-teaser__title">
+            <neos:contentElement.editable property="title" />
+        </h3>
+        <p class="news-item-teaser__teaser-text"><neos:contentElement.editable property="teaser" /></p>
+    </div>
+</f:section>
