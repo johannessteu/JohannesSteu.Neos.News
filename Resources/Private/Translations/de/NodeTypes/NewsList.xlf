@@ -6,6 +6,54 @@
         <source>News list</source>
         <target xml:lang="de">Liste mit News</target>
       </trans-unit>
+      <trans-unit id="properties.sortProperty" xml:space="preserve">
+        <source>Property to sort for</source>
+        <target xml:lang="de">Sortiere nach</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values._creationDateTime" xml:space="preserve">
+        <source>Creation date</source>
+        <target xml:lang="de">Erstelldatum</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values.archiveDate" xml:space="preserve">
+        <source>Archive date</source>
+        <target xml:lang="de">Archiviert am</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values.publishDate" xml:space="preserve">
+        <source>Publish date</source>
+        <target xml:lang="de">Veröffentlicht am</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values._lastModificationDateTime" xml:space="preserve">
+        <source>Publish date</source>
+        <target xml:lang="de">Letzte Änderung</target>
+      </trans-unit>
+      <trans-unit id="groups.mode" xml:space="preserve">
+        <source>Display mode</source>
+        <target xml:lang="de">Darstellungs-Modus</target>
+      </trans-unit>
+      <trans-unit id="properties.mode" xml:space="preserve">
+        <source>Display mode</source>
+        <target xml:lang="de">Darstellungs-Modus</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getAll" xml:space="preserve">
+        <source>All news</source>
+        <target xml:lang="de">Alle News</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getRootNode" xml:space="preserve">
+        <source>Root node</source>
+        <target xml:lang="de">Ausgangspunkt</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getImportant" xml:space="preserve">
+        <source>Only highlighted</source>
+        <target xml:lang="de">Nur Highlight-News</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getByCategory" xml:space="preserve">
+        <source>By Category</source>
+        <target xml:lang="de">Nach Kategorie</target>
+      </trans-unit>
+      <trans-unit id="properties.category" xml:space="preserve">
+        <source>Category</source>
+        <target xml:lang="de">Kategorie</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

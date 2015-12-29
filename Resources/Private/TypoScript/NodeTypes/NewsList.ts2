@@ -9,8 +9,28 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
     prototype(Flowpack.Listable:Listable) {
         @context.listClass = 'news-list'
         @context.itemClass = 'news-list__item'
-    }
 
+        @context.rootNode = ${q(node).property('rootNode') ? q(node).property('rootNode') : documentNode}
+        @context.category = ${q(node).property('category') ? q(node).property('category') : documentNode}
+        @context.queryType = ${q(node).property('mode') ? q(node).property('mode') : 'getAll'}
+
+        collection.getByCategory {
+            condition = ${queryType == 'getByCategory'}
+            renderer = ${q(site).find('[instanceof JohannesSteu.Neos.News:News]').hasCategory(category).get()}
+        }
+
+        collection.getImportant {
+            condition = ${queryType == 'getImportant'}
+            renderer = ${q(site).find('[instanceof JohannesSteu.Neos.News:News]').filter('[important = TRUE]').get()}
+        }
+
+        collection.getFromRootNode {
+            condition = ${queryType == 'getRootNode'}
+            renderer = ${q(rootNode).find('[instanceof JohannesSteu.Neos.News:News]').get()}
+        }
+
+        collection.getAll.condition = ${queryType == 'getAll'}
+    }
 }
 
 prototype(JohannesSteu.Neos.News:NewsShort) < prototype(TYPO3.Neos:Content) {

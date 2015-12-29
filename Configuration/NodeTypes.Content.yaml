@@ -6,6 +6,10 @@
     icon: icon-list
     inlineEditable: true
     group: 'news'
+    inspector:
+      groups:
+        mode:
+          label: 'i18n'
   constraints:
     nodeTypes:
       '*': false
@@ -13,6 +17,7 @@
     sortProperty:
       ui:
         label: 'i18n'
+        reloadIfChanged: TRUE
         inspector:
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
@@ -25,6 +30,41 @@
                 label: 'i18n'
               '_lastModificationDateTime':
                 label: 'i18n'
+    mode:
+      type: string
+      defaultValue: 'getAll'
+      ui:
+        label: 'i18n'
+        reloadIfChanged: TRUE
+        inspector:
+          position: 10
+          group: 'mode'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'getAll':
+                label: 'i18n'
+              'getRootNode':
+                label: 'i18n'
+              'getImportant':
+                label: 'i18n'
+              'getByCategory':
+                label: 'i18n'
+    category:
+      type: reference
+      ui:
+        label: 'i18n'
+        reloadIfChanged: TRUE
+        inspector:
+          position: 20
+          group: 'mode'
+          editorOptions:
+            nodeTypes: ['JohannesSteu.Neos.News:Category']
+    rootNode:
+      ui:
+        inspector:
+          position: 30
+          group: 'mode'
     wrapClass:
       ui:
         inspector:
