@@ -12,6 +12,7 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
 
         @context.rootNode = ${q(node).property('rootNode') ? q(node).property('rootNode') : documentNode}
         @context.category = ${q(node).property('category') ? q(node).property('category') : documentNode}
+        @context.respectImportant = ${q(node).property('respectImportant')}
         @context.queryType = ${q(node).property('mode') ? q(node).property('mode') : 'getAll'}
 
         collection.getByCategory {
@@ -30,6 +31,8 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
         }
 
         collection.getAll.condition = ${queryType == 'getAll'}
+
+        collection.@process.respectImportantNews = ${q(value).removeImportantNews(respectImportant).get() }
     }
 }
 
