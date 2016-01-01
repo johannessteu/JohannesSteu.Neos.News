@@ -32,7 +32,7 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
 
         collection.getAll.condition = ${queryType == 'getAll'}
 
-        collection.@process.respectImportantNews = ${q(value).removeImportantNews(respectImportant).get() }
+        collection.@process.respectImportantNews = ${q(value).count() > 0 && q(value).removeImportantNews(respectImportant).get()}
     }
 }
 
