@@ -34,6 +34,8 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
 
         collection.@process.respectImportantNews = ${q(value).count() > 0 && q(value).removeImportantNews(respectImportant).get()}
     }
+
+    @if.listNotEmpty = ${true}
 }
 
 prototype(JohannesSteu.Neos.News:NewsShort) < prototype(TYPO3.Neos:Content) {
