@@ -6,6 +6,7 @@ prototype(JohannesSteu.Neos.News:NewsDetail) < prototype(TYPO3.Neos:Content) {
     // General properties
     publishDate = ${q(node).property('publishDate')}
     archiveDate = ${q(node).property('archiveDate')}
+    lastModificationDate = ${q(node).property('_lastModificationDateTime')}
 
     title = ${q(node).property('title')}
     teaser = ${q(node).property('teaser')}

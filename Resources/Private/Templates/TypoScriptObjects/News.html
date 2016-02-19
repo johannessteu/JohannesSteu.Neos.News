@@ -1,14 +1,31 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
 <f:section name="news">
-    <div class="news-item {f:if(condition:'{isImportant}', then:'news-item--important')}" itemscope itemtype="http://schema.org/NewsArticle">
-        <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
+    <div class="news-item {f:if(condition:'{isImportant}', then:'news-item--important')}">
+        <script type="application/ld+json">
+            <![CDATA[
+            {
+              "@context": "http://schema.org",
+              "@type": "NewsArticle",
+              "mainEntityOfPage":{
+                "@type":"WebPage",
+                "@id":"https://google.com/article"
+              },
+              "headline": "]]>{title}<![CDATA[",
+              "datePublished": "]]>{f:format.date(date:'{publishDate}', format:'Y-m-d H:i')}<![CDATA[",
+              "dateModified": "]]>{f:format.date(date:'{lastModificationDate}', format:'Y-m-d H:i')}<![CDATA[",
+              "description": "]]>{teaser}<![CDATA["
+            }
+            ]]>
+        </script>
 
-        <h1 class="news-item__title" itemprop="headline">
-            <neos:contentElement.editable property="title" />
+        <h1 class="news-item__title">
+            <neos:contentElement.editable property="title"/>
         </h1>
 
-        <p class="news-tem__teaser-text" itemprop="description"><neos:contentElement.editable property="teaser" /></p>
+        <p class="news-tem__teaser-text">
+            <neos:contentElement.editable property="teaser"/>
+        </p>
 
         <div class="news-item__content">
             {content -> f:format.raw()}
@@ -19,8 +36,10 @@
 <f:section name="newsTeaser">
     <div class="news-item-teaser">
         <h3 class="news-item-teaser__title">
-            <neos:contentElement.editable property="title" />
+            <neos:contentElement.editable property="title"/>
         </h3>
-        <p class="news-item-teaser__teaser-text"><neos:contentElement.editable property="teaser" /></p>
+        <p class="news-item-teaser__teaser-text">
+            <neos:contentElement.editable property="teaser"/>
+        </p>
     </div>
 </f:section>
