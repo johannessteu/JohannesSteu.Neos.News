@@ -2,6 +2,7 @@
     "name": "johannessteu/neos-news",
     "type": "typo3-flow-package",
     "description": "Neos CMS news package based on flowpack/listable",
+    "license": "GPL-3.0+",
     "require": {
         "typo3/neos": "*",
         "flowpack/listable": "dev-master"
@@ -10,5 +11,8 @@
         "psr-0": {
             "JohannesSteu\\Neos\\News": "Classes"
         }
+    },
+    "extra": {
+        "marketplace-account": "hello@johannessteu.de"
     }
 }
