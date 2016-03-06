@@ -45,3 +45,9 @@ prototype(JohannesSteu.Neos.News:NewsShort) < prototype(TYPO3.Neos:Content) {
     title = ${q(node).property('title')}
     teaser = ${q(node).property('teaser')}
 }
+
+# Adjust cahces for pagination
+root.@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
+prototype(TYPO3.Neos:Page).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
+prototype(TYPO3.Neos:ContentCollection).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
+prototype(Flowpack.Listable:ListNode).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
