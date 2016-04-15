@@ -14,7 +14,10 @@
               "headline": "]]>{title}<![CDATA[",
               "datePublished": "]]>{f:format.date(date:'{publishDate}', format:'Y-m-d H:i')}<![CDATA[",
               "dateModified": "]]>{f:format.date(date:'{lastModificationDate}', format:'Y-m-d H:i')}<![CDATA[",
-              "description": "]]>{teaser}<![CDATA["
+              "description": "]]>{teaser}<![CDATA["]]>
+              <f:if condition="{authorname}">
+              ,"author": "{authorname}"
+              </f:if><![CDATA[
             }
             ]]>
         </script>
@@ -22,6 +25,10 @@
         <h1 class="news-item__title">
             <neos:contentElement.editable property="title"/>
         </h1>
+
+        <f:if condition="{author}">
+            <span class="news-item__author"><neos:link.node node="{author}">{authorname}</neos:link.node></span>
+        </f:if>
 
         <p class="news-item__teaser-text">
             <neos:contentElement.editable property="teaser"/>

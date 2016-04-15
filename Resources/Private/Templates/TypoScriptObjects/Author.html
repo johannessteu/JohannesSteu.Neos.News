@@ -1,0 +1,50 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+
+<f:section name="author">
+    <div class="author">
+        <h1 class="author__name">
+            <neos:contentElement.editable tag="span" property="firstname"/> <neos:contentElement.editable tag="span" property="lastname"/>
+        </h1>
+
+        <div class="author-informations">
+            <h3 class="author-informations__name">{firstname} {lastname}</h3>
+            <figure class="author-informations__avatar">
+                <picture>
+                    <typo3.media:image image="{avatar}" alt="{firstname} {lastname}" maximumWidth="300" />
+                </picture>
+            </figure>
+
+            <ul class="author-informations__contactlist">
+                <li>
+                    <span class="author-informations__contactlist-label">E-Mail:</span>
+                    <span class="author-informations__contactlist-contact author-informations__contactlist-contact--email"><a href="mailto://{email}">{email}</a></span>
+                </li>
+                <li>
+                    <span class="author-informations__contactlist-label">WWW:</span>
+                    <span class="author-informations__contactlist-contact author-informations__contactlist-contact--web"><a href="{www}">{www}</a></span>
+                </li>
+                <li>
+                    <span class="author-informations__contactlist-label">Twitter:</span>
+                    <span class="author-informations__contactlist-contact author-informations__contactlist-contact--twitter"><a href="https://twitter.com/{twitter}">{twitter}</a></span>
+                </li>
+                <li>
+                    <span class="author-informations__contactlist-label">Facebook:</span>
+                    <span class="author-informations__contactlist-contact author-informations__contactlist-contact--facebook"><a href="{facebook}">{facebook}</a></span>
+                </li>
+                <li>
+                    <span class="author-informations__contactlist-label">Xing:</span>
+                    <span class="author-informations__contactlist-contact author-informations__contactlist-contact--xing"><a href="{xing}">{xing}</a></span>
+                </li>
+                <li>
+                    <span class="author-informations__contactlist-label">LinkedIn:</span>
+                    <span class="author-informations__contactlist-contact author-informations__contactlist-contact--linkedin"><a href="{linkedin}">{linkedin}</a></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="author__about">
+            {about -> f:format.raw()}
+        </div>
+    </div>
+</f:section>

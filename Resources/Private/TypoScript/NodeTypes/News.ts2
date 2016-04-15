@@ -17,6 +17,10 @@ prototype(JohannesSteu.Neos.News:NewsDetail) < prototype(TYPO3.Neos:Content) {
     relatedNews = ${q(node).property('related')}
     tags = ${String.split(q(node).property('tags'), ",")}
 
+    author = ${q(node).property('author')}
+    authorname = ${q(this.author).property('firstname') + " " + q(this.author).property('lastname')}
+    authorname.@if.authorIsSet = ${q(node).property('author') != null}
+
     content = TYPO3.Neos:ContentCollection{
         nodePath = 'content'
     }

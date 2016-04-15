@@ -119,6 +119,14 @@
           group: 'related'
           editorOptions:
             nodeTypes: ['JohannesSteu.Neos.News:AbstractNews']
+    author:
+      type: reference
+      ui:
+        label: 'i18n'
+        inspector:
+          group: 'related'
+          editorOptions:
+            nodeTypes: ['JohannesSteu.Neos.News:Author']
     tags:
       type: string
       ui:
@@ -146,6 +154,92 @@
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'
+
+'JohannesSteu.Neos.News:Author':
+  childNodes:
+    about:
+      type: 'TYPO3.Neos:ContentCollection'
+  superTypes:
+   'TYPO3.Neos:Document': TRUE
+  ui:
+    label: 'i18n'
+    icon: 'icon-user'
+    group: 'news'
+    inspector:
+      groups:
+        author:
+          label: 'i18n'
+          position: 20
+        contact:
+          label: 'i18n'
+          position: 30
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    firstname:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: author
+    lastname:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: author
+    avatar:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'i18n'
+        reloadIfChanged: TRUE
+        inspector:
+          group: author
+    www:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: contact
+    email:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: contact
+    twitter:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: contact
+    facebook:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: contact
+    xing:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: contact
+    linkedin:
+      type: string
+      inlineEditable: true
+      ui:
+        label: 'i18n'
+        inspector:
+          group: contact
 
 'JohannesSteu.Neos.News:Storage':
   superTypes:

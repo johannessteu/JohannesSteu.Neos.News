@@ -1,0 +1,30 @@
+
+prototype(JohannesSteu.Neos.News:AuthorInformations) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/Author.html'
+    sectionName = 'author'
+
+    firstname = ${q(node).property('firstname')}
+    lastname = ${q(node).property('lastname')}
+    avatar = ${q(node).property('avatar')}
+
+    # contact properties
+    www = ${q(node).property('www')}
+    email = ${q(node).property('email')}
+    twitter = ${q(node).property('twitter')}
+    facebook = ${q(node).property('facebook')}
+    xing = ${q(node).property('xing')}
+    linkedin = ${q(node).property('linkedin')}
+
+    about = TYPO3.Neos:ContentCollection{
+        nodePath = 'about'
+    }
+}
+
+# extend primary content
+prototype(TYPO3.Neos:PrimaryContent) {
+    author {
+        @position = 'before default'
+        condition = ${q(node).is('[instanceof JohannesSteu.Neos.News:Author]')}
+        type = 'JohannesSteu.Neos.News:AuthorInformations'
+    }
+}
