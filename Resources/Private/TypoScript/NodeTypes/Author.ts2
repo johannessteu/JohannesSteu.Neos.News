@@ -15,6 +15,9 @@ prototype(JohannesSteu.Neos.News:AuthorInformations) < prototype(TYPO3.Neos:Cont
     xing = ${q(node).property('xing')}
     linkedin = ${q(node).property('linkedin')}
 
+    # News by this author
+    news = JohannesSteu.Neos.News:AuthorNewsList
+
     about = TYPO3.Neos:ContentCollection{
         nodePath = 'about'
     }

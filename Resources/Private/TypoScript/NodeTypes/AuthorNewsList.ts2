@@ -1,0 +1,39 @@
+prototype(JohannesSteu.Neos.News:AuthorNewsList) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/AuthorNewsList.html'
+
+    # Override node with your author node
+    @context.author = ${node}
+
+    # Sort settings, sortOrder may be ASC or DESC
+    @context.sortProperty = 'publishDate'
+    @context.sortOrder = 'DESC'
+    @context.limit = 50
+    @context.offset = 0
+
+    # fetch all news by author
+    news = ${q(site).find('[instanceof JohannesSteu.Neos.News:News]').filterByAuthor(author).get()}
+    itemRenderer = JohannesSteu.Neos.News:AuthorNewsListItem
+
+    # slice and sort the list
+    news.@process.sort = ${value && q(value).count() > 0 ? q(value).sort(sortProperty, sortOrder).get() : value}
+    news.@process.slice = ${value && q(value).count() > 0 ? q(value).slice(String.toInteger(offset), String.toInteger(limit)).get() : value}
+}
+
+prototype(JohannesSteu.Neos.News:AuthorNewsListItem) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/AuthorNewsListItem.html'
+
+    publishDate = ${q(node).property('publishDate')}
+    title = ${q(node).property('title')}
+    teaser = ${q(node).property('teaser')}
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            node = ${node}
+        }
+        entryTags {
+            1 = ${'Node_' + node.identifier}
+            2 = ${'DescendantOf_' + node.identifier}
+        }
+    }
+}
