@@ -99,3 +99,53 @@
       ui:
         inspector:
           group: 'doNotShow'
+
+'JohannesSteu.Neos.News:NewsFilter':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'i18n'
+    icon: icon-filter
+    inlineEditable: FALSE
+    group: 'news'
+    inspector:
+      groups:
+        filter:
+          label: 'i18n'
+  properties:
+    useDateFiter:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'i18n'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'filter'
+          position: 15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

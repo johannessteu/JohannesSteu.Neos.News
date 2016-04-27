@@ -1,0 +1,25 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:section name="newsFilter">
+    <f:if condition="{dateFilter}">
+        <ts:render path="dateFilterTemplate" context="{dateFilter:dateFilter}" />
+    </f:if>
+</f:section>
+
+<f:section name="dateFilter">
+    <ul class="news-datefilter">
+        <f:for each="{dateFilter}" key="year" as="months">
+            <li>
+                <span class="news-datefilter__year"><neos:link.node node="{node}" arguments="{newsfilter-date:'{year}'}">{year}</neos:link.node></span>
+                <ul>
+                    <f:for each="{months}" key="month" as="count">
+                        <li>
+                            <neos:link.node node="{node}" arguments="{newsfilter-date:'{year}-{month}'}"><span class="news-datefilter__month">{month} ({count})</span></neos:link.node>
+                        </li>
+                    </f:for>
+                </ul>
+            </li>
+        </f:for>
+    </ul>
+</f:section>

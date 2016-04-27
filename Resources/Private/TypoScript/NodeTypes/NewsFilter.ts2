@@ -1,0 +1,41 @@
+prototype(JohannesSteu.Neos.News:NewsFilter) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/NodeTypes/NewsFilter.html'
+    sectionName = 'newsFilter'
+
+    # Search for a newslist on the current documentNode
+    newslist = ${q(documentNode).find('[instanceof JohannesSteu.Neos.News:NewsList]').get(0)}
+
+    # Fetch settings form the newslist to filter for the same news
+    @context.rootNode = ${q(this.newslist).property('rootNode') ? q(this.newslist).property('rootNode') : documentNode}
+    @context.category = ${q(this.newslist).property('category') ? q(this.newslist).property('category') : documentNode}
+    @context.respectImportant = ${q(this.newslist).property('respectImportant')}
+    @context.queryType = ${q(this.newslist).property('mode')}
+
+    # get all news for that list
+    newsToFilter = TYPO3.TypoScript:Case {
+        getByCategory {
+            condition = ${queryType == 'getByCategory'}
+            renderer = ${q(site).find('[instanceof JohannesSteu.Neos.News:News]').hasCategory(category).get()}
+        }
+        getImportant {
+            condition = ${queryType == 'getImportant'}
+            renderer = ${q(site).find('[instanceof JohannesSteu.Neos.News:News]').filter('[important = TRUE]').get()}
+        }
+        getFromRootNode {
+            condition = ${queryType == 'getRootNode'}
+            renderer = ${q(rootNode).find('[instanceof JohannesSteu.Neos.News:News]').get()}
+        }
+        getAll.condition = ${queryType == 'getAll'}
+        getAll.renderer = ${q(site).find('[instanceof JohannesSteu.Neos.News:News]').get()}
+    }
+
+    dateFilter = ${q(this.newsToFilter).dateFilter()}
+    dateFilter.@if.dateFilterIsEnabled = ${q(node).property('useDateFiter')}
+
+    dateFilterTemplate = TYPO3.TypoScript:Template {
+        templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/NodeTypes/NewsFilter.html'
+        sectionName = 'dateFilter'
+
+        dateFilter = ${dateFilter}
+    }
+}
