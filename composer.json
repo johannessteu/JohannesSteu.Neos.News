@@ -5,7 +5,7 @@
     "license": "GPL-3.0+",
     "require": {
         "typo3/neos": "*",
-        "flowpack/listable": "dev-master"
+        "flowpack/listable": "~0.4.0"
     },
     "autoload": {
         "psr-0": {
