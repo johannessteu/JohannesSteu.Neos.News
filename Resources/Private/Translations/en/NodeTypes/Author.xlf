@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="JohannesSteu.Neos.News" source-language="en" datatype="plaintext" target-language="en">
+    <body>
+
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>author</source>
+        <target xml:lang="en">Author</target>
+      </trans-unit>
+
+      <trans-unit id="groups.author" xml:space="preserve">
+        <source>author</source>
+        <target xml:lang="en">Author</target>
+      </trans-unit>
+      <trans-unit id="groups.contact" xml:space="preserve">
+        <source>contact</source>
+        <target xml:lang="en">Contact</target>
+      </trans-unit>
+
+      <trans-unit id="properties.firstname" xml:space="preserve">
+        <source>first name</source>
+        <target xml:lang="en">First name</target>
+      </trans-unit>
+      <trans-unit id="properties.lastname" xml:space="preserve">
+        <source>last name</source>
+        <target xml:lang="en">last name</target>
+      </trans-unit>
+      <trans-unit id="properties.avatar" xml:space="preserve">
+        <source>avatar</source>
+        <target xml:lang="en">Avatar</target>
+      </trans-unit>
+      <trans-unit id="properties.www" xml:space="preserve">
+        <source>www</source>
+        <target xml:lang="en">Website</target>
+      </trans-unit>
+      <trans-unit id="properties.email" xml:space="preserve">
+        <source>email</source>
+        <target xml:lang="en">E-Mail</target>
+      </trans-unit>
+      <trans-unit id="properties.twitter" xml:space="preserve">
+        <source>twitter</source>
+        <target xml:lang="en">Twitter</target>
+      </trans-unit>
+      <trans-unit id="properties.facebook" xml:space="preserve">
+        <source>facebook</source>
+        <target xml:lang="en">Facebook</target>
+      </trans-unit>
+      <trans-unit id="properties.xing" xml:space="preserve">
+        <source>xing</source>
+        <target xml:lang="en">Xing</target>
+      </trans-unit>
+      <trans-unit id="properties.linkedin" xml:space="preserve">
+        <source>linkedin</source>
+        <target xml:lang="en">LinkedIn</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

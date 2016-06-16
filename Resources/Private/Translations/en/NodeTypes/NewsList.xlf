@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="JohannesSteu.Neos.News" source-language="en" datatype="plaintext" target-language="en">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>News list</source>
+        <target xml:lang="en">News list</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty" xml:space="preserve">
+        <source>Property to sort for</source>
+        <target xml:lang="en">Property to sort for</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values._creationDateTime" xml:space="preserve">
+        <source>Creation date</source>
+        <target xml:lang="en">Creation date</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values.archiveDate" xml:space="preserve">
+        <source>Archive date</source>
+        <target xml:lang="en">Archive date</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values.publishDate" xml:space="preserve">
+        <source>Publish date</source>
+        <target xml:lang="en">Publish date</target>
+      </trans-unit>
+      <trans-unit id="properties.sortProperty.selectBoxEditor.values._lastModificationDateTime" xml:space="preserve">
+        <source>Publish date</source>
+        <target xml:lang="en">Publish date</target>
+      </trans-unit>
+      <trans-unit id="groups.mode" xml:space="preserve">
+        <source>Display mode</source>
+        <target xml:lang="en">Display mode</target>
+      </trans-unit>
+      <trans-unit id="properties.mode" xml:space="preserve">
+        <source>Display mode</source>
+        <target xml:lang="en">Display mod</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getAll" xml:space="preserve">
+        <source>All news</source>
+        <target xml:lang="en">All news</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getRootNode" xml:space="preserve">
+        <source>Root node</source>
+        <target xml:lang="en">Root node</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getImportant" xml:space="preserve">
+        <source>Only highlighted</source>
+        <target xml:lang="en">Only highlighted</target>
+      </trans-unit>
+      <trans-unit id="properties.mode.selectBoxEditor.values.getByCategory" xml:space="preserve">
+        <source>By Category</source>
+        <target xml:lang="en">By Category</target>
+      </trans-unit>
+      <trans-unit id="properties.category" xml:space="preserve">
+        <source>Category</source>
+        <target xml:lang="en">Category</target>
+      </trans-unit>
+      <trans-unit id="properties.respectImportant" xml:space="preserve">
+        <source>Including highlight news</source>
+        <target xml:lang="en">Including highlight news</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

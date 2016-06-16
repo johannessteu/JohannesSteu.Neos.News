@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="JohannesSteu.Neos.News" source-language="en" datatype="plaintext" target-language="en">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>News filter</source>
+        <target xml:lang="en">News-Filter</target>
+      </trans-unit>
+      <trans-unit id="groups.filter" xml:space="preserve">
+        <source>Filter settings</source>
+        <target xml:lang="en">Filter settings</target>
+      </trans-unit>
+      <trans-unit id="properties.useDateFiter" xml:space="preserve">
+        <source>Date Filter</source>
+        <target xml:lang="en">Date filter</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
