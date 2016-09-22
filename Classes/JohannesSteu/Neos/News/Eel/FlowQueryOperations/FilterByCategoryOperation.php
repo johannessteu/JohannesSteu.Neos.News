@@ -52,7 +52,7 @@ class FilterByCategoryOperation extends AbstractOperation
 	public function evaluate(FlowQuery $flowQuery, array $arguments)
 	{
 		if (!isset($arguments[0]) || empty($arguments[0])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('needs a category to filter for', 1332492263);
+			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('findByCategory() needs a category to filter for', 1332492263);
 		} else {
 			$nodesWithCategorySet = [];
 

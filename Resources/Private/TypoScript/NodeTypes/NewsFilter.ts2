@@ -39,12 +39,12 @@ prototype(JohannesSteu.Neos.News:NewsFilter) < prototype(TYPO3.Neos:Content) {
         dateFilter = ${dateFilter}
     }
 
-    categoryFilter = ${q(site).find('[instanceof JohannesSteu.Neos.News:Category]').get()}
+    categories = ${q(site).find('[instanceof JohannesSteu.Neos.News:Category]').get()}
 
     categoryFilterTemplate = TYPO3.TypoScript:Template {
         templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/NodeTypes/NewsFilter.html'
         sectionName = 'categoryFilter'
 
-        categoryFilter = ${categoryFilter}
+        categories = ${categories}
     }
 }

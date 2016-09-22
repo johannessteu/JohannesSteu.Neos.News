@@ -2,8 +2,8 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 <f:section name="newsFilter">
-    <f:if condition="{categoryFilter}">
-        <ts:render path="categoryFilterTemplate" context="{categoryFilter:categoryFilter}" />
+    <f:if condition="{categories}">
+        <ts:render path="categoryFilterTemplate" context="{categories:categories}" />
     </f:if>
     <f:if condition="{dateFilter}">
         <ts:render path="dateFilterTemplate" context="{dateFilter:dateFilter}" />
@@ -30,11 +30,9 @@
 
 <f:section name="categoryFilter">
     <ul class="news-categoryfilter">
-        <li class="headline">Themen / Kategorien</li>
-        <li><neos:link.node node="{node}"><span class="news-categoryfilter__category">Alle</span></neos:link.node></li>
-        <f:for each="{categoryFilter}" as="filter">
+        <f:for each="{categories}" as="category">
             <li>
-                <neos:link.node node="{node}" arguments="{category: '{filter.properties.uriPathSegment}'}"><span class="news-categoryfilter__category">{filter.properties.title}</span></neos:link.node>
+                <neos:link.node node="{node}" arguments="{newsfilter-category: '{category.properties.uriPathSegment}'}"><span class="news-categoryfilter__category">{category.properties.title}</span></neos:link.node>
             </li>
         </f:for>
     </ul>
