@@ -11,8 +11,7 @@ use TYPO3\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 
 /**
- * EEL operation to filter nodes by a given date. This operation will return all
- * nodes withing this month if a month is given, otherwise all nodes within the given year
+ * EEL operation to filter nodes by a given category.
  */
 class FilterByCategoryOperation extends AbstractOperation
 {
@@ -47,13 +46,13 @@ class FilterByCategoryOperation extends AbstractOperation
 	 * {@inheritdoc}
 	 *
 	 * @param FlowQuery $flowQuery the FlowQuery object
-	 * @param array $arguments First argument is the property to filter for, second is the date to filter for
+	 * @param array $arguments First argument is the property to filter for, second is the category to filter for
 	 * @return mixed
 	 */
 	public function evaluate(FlowQuery $flowQuery, array $arguments)
 	{
 		if (!isset($arguments[0]) || empty($arguments[0])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('hasCategory() needs a category to filter for', 1332492263);
+			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('needs a category to filter for', 1332492263);
 		} else {
 			$nodesWithCategorySet = [];
 
@@ -64,7 +63,7 @@ class FilterByCategoryOperation extends AbstractOperation
 				/** @var $node NodeInterface */
 				$nodeCategories = $node->getProperty("categories");
 				foreach ($nodeCategories as $nodeCategory) {
-					/** @var $nodeCategory \TYPO3\TYPO3CR\Domain\Model\Node */
+					/** @var $nodeCategory Node */
 					if ($nodeCategory->getNodeData()->getProperty("uriPathSegment") == $categoryNode) {
 						$nodesWithCategorySet[] = $node;
 					}
