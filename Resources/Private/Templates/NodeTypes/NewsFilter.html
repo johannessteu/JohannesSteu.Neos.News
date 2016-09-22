@@ -23,3 +23,16 @@
         </f:for>
     </ul>
 </f:section>
+
+
+<f:section name="categoryFilter">
+    <ul class="news-categoryfilter">
+        <li class="headline">Themen / Kategorien</li>
+        <li><neos:link.node node="{node}"><span class="news-categoryfilter__category">Alle</span></neos:link.node></li>
+        <f:for each="{categoryFilter}" as="filter">
+            <li>
+                <neos:link.node node="{node}" arguments="{category: '{filter.properties.uriPathSegment}'}"><span class="news-categoryfilter__category">{filter.properties.title}</span></neos:link.node>
+            </li>
+        </f:for>
+    </ul>
+</f:section>
