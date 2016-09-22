@@ -63,6 +63,11 @@ class FilterByCategoryOperation extends AbstractOperation
 				/** @var $node NodeInterface */
 				$nodeCategories = $node->getProperty("categories");
 				foreach ($nodeCategories as $nodeCategory) {
+
+					if ($nodeCategory->getNodeType()->getName() !== 'JohannesSteu.Neos.News:Category') {
+						throw new \TYPO3\Eel\FlowQuery\FlowQueryException('findByCategory() only accepts as parameter Nodes of type JohannesSteu.Neos.News:Category but '.$nodeCategory->getNodeType().' given', 1460741067);
+					}
+
 					/** @var $nodeCategory Node */
 					if ($nodeCategory->getNodeData()->getProperty("uriPathSegment") == $categoryNode) {
 						$nodesWithCategorySet[] = $node;
