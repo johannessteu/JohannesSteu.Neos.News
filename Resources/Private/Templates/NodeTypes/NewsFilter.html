@@ -2,6 +2,9 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 <f:section name="newsFilter">
+    <f:if condition="{categoryFilter}">
+        <ts:render path="categoryFilterTemplate" context="{categoryFilter:categoryFilter}" />
+    </f:if>
     <f:if condition="{dateFilter}">
         <ts:render path="dateFilterTemplate" context="{dateFilter:dateFilter}" />
     </f:if>
