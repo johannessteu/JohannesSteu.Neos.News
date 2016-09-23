@@ -35,7 +35,9 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
         collection.@process.respectImportantNews = ${q(value).count() > 0 && q(value).removeImportantNews(respectImportant).get()}
 
         # apply newsfilter if set
+        collection.@process.applyCategoryFilter = ${request.arguments.newsfilter-category != NULL ? q(value).filterByCategory(request.arguments.newsfilter-category).get() : value}
         collection.@process.applyDateFilter = ${request.arguments.newsfilter-date != NULL ? q(value).filterByDateintervall('publishDate',request.arguments.newsfilter-date, '>').get() : value}
+
     }
 }
 
@@ -54,8 +56,12 @@ prototype(TYPO3.Neos:ContentCollection).@cache.entryIdentifier.pagination = ${re
 prototype(Flowpack.Listable:ListNode).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
 
 
-# Adjust cachces for newsfilter
+# Adjust caches for newsfilter
 root.@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
 prototype(TYPO3.Neos:Page).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
 prototype(TYPO3.Neos:ContentCollection).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
 prototype(Flowpack.Listable:ListNode).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
+root.@cache.entryIdentifier.categoryfilter = ${request.arguments.newsfilter-category}
+prototype(TYPO3.Neos:Page).@cache.entryIdentifier.categoryfilter = ${request.arguments.newsfilter-category}
+prototype(TYPO3.Neos:ContentCollection).@cache.entryIdentifier.categoryfilter = ${request.arguments.newsfilter-category}
+prototype(Flowpack.Listable:ListNode).@cache.entryIdentifier.categoryfilter = ${request.arguments.newsfilter-category}
