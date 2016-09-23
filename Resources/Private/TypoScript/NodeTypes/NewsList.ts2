@@ -35,7 +35,7 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
         collection.@process.respectImportantNews = ${q(value).count() > 0 && q(value).removeImportantNews(respectImportant).get()}
 
         # apply newsfilter if set
-        collection.@process.applyCategoryFilter = ${request.arguments.category != NULL ? q(value).filterByCategory(request.arguments.category).get() : value}
+        collection.@process.applyCategoryFilter = ${request.arguments.newsfilter-category != NULL ? q(value).filterByCategory(request.arguments.newsfilter-category).get() : value}
         collection.@process.applyDateFilter = ${request.arguments.newsfilter-date != NULL ? q(value).filterByDateintervall('publishDate',request.arguments.newsfilter-date, '>').get() : value}
 
     }
