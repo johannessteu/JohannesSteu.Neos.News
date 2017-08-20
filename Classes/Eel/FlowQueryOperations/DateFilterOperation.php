@@ -5,10 +5,10 @@ namespace JohannesSteu\Neos\News\Eel\FlowQueryOperations;
  * This script belongs to the Flow package "JohannesSteu.Neos.News".      *
  *                                                                        */
 
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 /**
  * EEL operation to Build a date filter for news. This operation returns an array with all dates that can be
@@ -40,7 +40,7 @@ class DateFilterOperation extends AbstractOperation
     /**
      * {@inheritdoc}
      *
-     * We can only handle TYPO3CR Nodes.
+     * We can only handle NeosCR Nodes.
      *
      * @param mixed $context
      * @return boolean

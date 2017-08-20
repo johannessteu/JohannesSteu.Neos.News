@@ -1,0 +1,11 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace fs=Neos\Fusion\ViewHelpers}
+
+<ul class="author-newslist">
+    <f:for each="{news}" as="newsItem">
+        <li class="author-newslist__item">
+            <fs:render path="itemRenderer" context="{node:newsItem}" />
+        </li>
+    </f:for>
+</ul>

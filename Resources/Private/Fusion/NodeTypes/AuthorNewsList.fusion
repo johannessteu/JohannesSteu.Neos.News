@@ -1,5 +1,5 @@
-prototype(JohannesSteu.Neos.News:AuthorNewsList) < prototype(TYPO3.Neos:Content) {
-    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/AuthorNewsList.html'
+prototype(JohannesSteu.Neos.News:AuthorNewsList) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/FusionObjects/AuthorNewsList.html'
 
     # Override node with your author node
     @context.author = ${node}
@@ -19,8 +19,8 @@ prototype(JohannesSteu.Neos.News:AuthorNewsList) < prototype(TYPO3.Neos:Content)
     news.@process.slice = ${value && q(value).count() > 0 ? q(value).slice(String.toInteger(offset), String.toInteger(limit)).get() : value}
 }
 
-prototype(JohannesSteu.Neos.News:AuthorNewsListItem) < prototype(TYPO3.Neos:Content) {
-    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/AuthorNewsListItem.html'
+prototype(JohannesSteu.Neos.News:AuthorNewsListItem) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/FusionObjects/AuthorNewsListItem.html'
 
     publishDate = ${q(node).property('publishDate')}
     title = ${q(node).property('title')}

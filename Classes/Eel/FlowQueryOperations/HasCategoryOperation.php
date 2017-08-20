@@ -5,10 +5,10 @@ namespace JohannesSteu\Neos\News\Eel\FlowQueryOperations;
  * This script belongs to the Flow package "JohannesSteu.Neos.News".      *
  *                                                                        */
 
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 /**
  * EEL operation to check if a node has a category set
@@ -32,7 +32,7 @@ class HasCategoryOperation extends AbstractOperation
     /**
      * {@inheritdoc}
      *
-     * We can only handle TYPO3CR Nodes.
+     * We can only handle NeosCR Nodes.
      *
      * @param mixed $context
      * @return boolean
@@ -52,7 +52,7 @@ class HasCategoryOperation extends AbstractOperation
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
         if (!isset($arguments[0]) || empty($arguments[0])) {
-            throw new \TYPO3\Eel\FlowQuery\FlowQueryException('hasCategory() needs a category to filter for', 1332492263);
+            throw new \Neos\Eel\FlowQuery\FlowQueryException('hasCategory() needs a category to filter for', 1332492263);
         } else {
             $nodesWithCategorySet = [];
 

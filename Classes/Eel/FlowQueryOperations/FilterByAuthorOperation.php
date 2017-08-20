@@ -5,10 +5,10 @@ namespace JohannesSteu\Neos\News\Eel\FlowQueryOperations;
  * This script belongs to the Flow package "JohannesSteu.Neos.News".      *
  *                                                                        */
 
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 /**
  * EEL operation to filter nodes by a given author
@@ -32,7 +32,7 @@ class FilterByAuthorOperation extends AbstractOperation
     /**
      * {@inheritdoc}
      *
-     * We can only handle TYPO3CR Nodes.
+     * We can only handle NeosCR Nodes.
      *
      * @param mixed $context
      * @return boolean
@@ -52,14 +52,14 @@ class FilterByAuthorOperation extends AbstractOperation
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
         if (!isset($arguments[0]) || empty($arguments[0])) {
-            throw new \TYPO3\Eel\FlowQuery\FlowQueryException('findByAuthor() needs a author to filter for', 1460741060);
+            throw new \Neos\Eel\FlowQuery\FlowQueryException('findByAuthor() needs a author to filter for', 1460741060);
         } else {
 
             /** @var NodeInterface $author */
             $author = $arguments[0];
 
             if ($author->getNodeType()->getName() !== 'JohannesSteu.Neos.News:Author') {
-                throw new \TYPO3\Eel\FlowQuery\FlowQueryException('findByAuthor() only accepts as parameter Nodes of type JohannesSteu.Neos.News:Author but '.$author->getNodeType().' given', 1460741067);
+                throw new \Neos\Eel\FlowQuery\FlowQueryException('findByAuthor() only accepts as parameter Nodes of type JohannesSteu.Neos.News:Author but '.$author->getNodeType().' given', 1460741067);
             }
 
             $nodesWithAuthorSet = [];
