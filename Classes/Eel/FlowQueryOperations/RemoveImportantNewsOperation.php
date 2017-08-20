@@ -5,10 +5,10 @@ namespace JohannesSteu\Neos\News\Eel\FlowQueryOperations;
  * This script belongs to the Flow package "JohannesSteu.Neos.News".      *
  *                                                                        */
 
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 /**
  * EEL operation to remove important news
@@ -32,7 +32,7 @@ class RemoveImportantNewsOperation extends AbstractOperation
     /**
      * {@inheritdoc}
      *
-     * We can only handle TYPO3CR Nodes.
+     * We can only handle NeosCR Nodes.
      *
      * @param mixed $context
      * @return boolean
@@ -52,7 +52,7 @@ class RemoveImportantNewsOperation extends AbstractOperation
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
         if (!is_array($arguments)) {
-            throw new \TYPO3\Eel\FlowQuery\FlowQueryException('removeImportantNews() needs a true/false argument', 1332492263);
+            throw new \Neos\Eel\FlowQuery\FlowQueryException('removeImportantNews() needs a true/false argument', 1332492263);
         } else {
             if (!$arguments[0]) {
                 $nodes = $flowQuery->getContext();

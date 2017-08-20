@@ -15,7 +15,7 @@ Backticks make for `inline code` and code blocks can be in various languages lik
 
 .. code-block:: yaml
 
-  TYPO3:
+  Neos:
     Neos:
       Seo:
         twitterCard:

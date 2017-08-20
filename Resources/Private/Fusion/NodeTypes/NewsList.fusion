@@ -39,8 +39,8 @@ prototype(JohannesSteu.Neos.News:NewsList) < prototype(Flowpack.Listable:ListNod
     }
 }
 
-prototype(JohannesSteu.Neos.News:NewsShort) < prototype(TYPO3.Neos:Content) {
-    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/News.html'
+prototype(JohannesSteu.Neos.News:NewsShort) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/FusionObjects/News.html'
     sectionName = "newsTeaser"
 
     title = ${q(node).property('title')}
@@ -49,13 +49,13 @@ prototype(JohannesSteu.Neos.News:NewsShort) < prototype(TYPO3.Neos:Content) {
 
 # Adjust caches for pagination
 root.@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
-prototype(TYPO3.Neos:Page).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
-prototype(TYPO3.Neos:ContentCollection).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
+prototype(Neos.NodeTypes:Page).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
+prototype(Neos.Neos:ContentCollection).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
 prototype(Flowpack.Listable:ListNode).@cache.entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
 
 
 # Adjust cachces for newsfilter
 root.@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
-prototype(TYPO3.Neos:Page).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
-prototype(TYPO3.Neos:ContentCollection).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
+prototype(Neos.NodeTypes:Page).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
+prototype(Neos.Neos:ContentCollection).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}
 prototype(Flowpack.Listable:ListNode).@cache.entryIdentifier.datefilter = ${request.arguments.newsfilter-date}

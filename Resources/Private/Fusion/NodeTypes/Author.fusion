@@ -1,6 +1,6 @@
 
-prototype(JohannesSteu.Neos.News:AuthorInformations) < prototype(TYPO3.Neos:Content) {
-    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/TypoScriptObjects/Author.html'
+prototype(JohannesSteu.Neos.News:AuthorInformations) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.News/Private/Templates/FusionObjects/Author.html'
     sectionName = 'author'
 
     firstname = ${q(node).property('firstname')}
@@ -18,13 +18,13 @@ prototype(JohannesSteu.Neos.News:AuthorInformations) < prototype(TYPO3.Neos:Cont
     # News by this author
     news = JohannesSteu.Neos.News:AuthorNewsList
 
-    about = TYPO3.Neos:ContentCollection{
+    about = Neos.Neos:ContentCollection{
         nodePath = 'about'
     }
 }
 
 # extend primary content
-prototype(TYPO3.Neos:PrimaryContent) {
+prototype(Neos.Neos:PrimaryContent) {
     author {
         @position = 'before default'
         condition = ${q(node).is('[instanceof JohannesSteu.Neos.News:Author]')}

@@ -1,15 +1,15 @@
 {
     "name": "johannessteu/neos-news",
-    "type": "typo3-flow-package",
+    "type": "neos-package",
     "description": "Neos CMS news package based on flowpack/listable",
     "license": "GPL-3.0+",
     "require": {
-        "typo3/neos": "*",
-        "flowpack/listable": "~0.4.0"
+        "neos/neos": "~3.0",
+        "flowpack/listable": "^2.0"
     },
     "autoload": {
-        "psr-0": {
-            "JohannesSteu\\Neos\\News": "Classes"
+        "psr-4": {
+            "JohannesSteu\\Neos\\News\\": "Classes"
         }
     },
     "extra": {

@@ -1,6 +1,6 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace media=TYPO3\Media\ViewHelpers}
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace fs=Neos\Fusion\ViewHelpers}
 
 <f:section name="author">
     <div class="author">
@@ -12,7 +12,7 @@
             <h3 class="author-informations__name">{firstname} {lastname}</h3>
             <figure class="author-informations__avatar">
                 <picture>
-                    <typo3.media:image image="{avatar}" alt="{firstname} {lastname}" maximumWidth="300" />
+                    <neos.media:image image="{avatar}" alt="{firstname} {lastname}" maximumWidth="300" />
                 </picture>
             </figure>
 
@@ -44,7 +44,7 @@
             </ul>
         </div>
 
-        <ts:render path="news" context="{node: node, limit: 5}"/>
+        <fs:render path="news" context="{node: node, limit: 5}"/>
 
         <div class="author__about">
             {about -> f:format.raw()}

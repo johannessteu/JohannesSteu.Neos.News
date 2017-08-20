@@ -1,8 +1,8 @@
-TYPO3:
+Neos:
   Neos:
-    typoScript:
+    fusion:
       autoInclude:
-        'JohannesSteu.Neos.News': TRUE
+        'JohannesSteu.Neos.News': true
     nodeTypes:
       groups:
         news:

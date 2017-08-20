@@ -2,13 +2,13 @@
 'JohannesSteu.Neos.News:AbstractNews':
   abstract: TRUE
   superTypes:
-    'TYPO3.Neos:Document': TRUE
+    'Neos.Neos:Document': TRUE
   constraints:
     nodeTypes:
       '*': false
   childNodes:
     content:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   ui:
     label: 'i18n'
     icon: 'icon-edit'
@@ -34,7 +34,7 @@
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
-        'TYPO3.Neos/Validation/DateTimeValidator': []
+        'Neos.Neos/Validation/DateTimeValidator': []
     archiveDate:
       type: DateTime
       ui:
@@ -45,7 +45,7 @@
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
-        'TYPO3.Neos/Validation/DateTimeValidator': []
+        'Neos.Neos/Validation/DateTimeValidator': []
     title:
       type: string
       ui:
@@ -142,7 +142,7 @@
 
 'JohannesSteu.Neos.News:Category':
   superTypes:
-   'TYPO3.Neos:Document': TRUE
+   'Neos.Neos:Document': TRUE
   constraints:
     nodeTypes:
       'JohannesSteu.Neos.News:Category': TRUE
@@ -153,14 +153,14 @@
     group: 'news'
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
 
 'JohannesSteu.Neos.News:Author':
   childNodes:
     about:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   superTypes:
-   'TYPO3.Neos:Document': TRUE
+   'Neos.Neos:Document': TRUE
   ui:
     label: 'i18n'
     icon: 'icon-user'
@@ -175,7 +175,7 @@
           position: 30
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     firstname:
       type: string
@@ -192,7 +192,7 @@
         inspector:
           group: author
     avatar:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'i18n'
         reloadIfChanged: TRUE
@@ -243,7 +243,7 @@
 
 'JohannesSteu.Neos.News:Storage':
   superTypes:
-   'TYPO3.Neos:Document': TRUE
+   'Neos.Neos:Document': TRUE
   constraints:
     nodeTypes:
       '*': false
@@ -254,4 +254,4 @@
     group: 'news'
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'

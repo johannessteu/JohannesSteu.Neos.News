@@ -5,10 +5,10 @@ namespace JohannesSteu\Neos\News\Eel\FlowQueryOperations;
  * This script belongs to the Flow package "JohannesSteu.Neos.News".      *
  *                                                                        */
 
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 /**
  * EEL operation to filter nodes by a given date. This operation will return all
@@ -33,7 +33,7 @@ class FilterByDateintervallOperation extends AbstractOperation
     /**
      * {@inheritdoc}
      *
-     * We can only handle TYPO3CR Nodes.
+     * We can only handle NeosCR Nodes.
      *
      * @param mixed $context
      * @return boolean
@@ -53,10 +53,10 @@ class FilterByDateintervallOperation extends AbstractOperation
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
         if (!isset($arguments[0]) || empty($arguments[0])) {
-            throw new \TYPO3\Eel\FlowQuery\FlowQueryException('findByDateintervall() needs a property to filter for', 1460741060);
+            throw new \Neos\Eel\FlowQuery\FlowQueryException('findByDateintervall() needs a property to filter for', 1460741060);
         } else {
             if (!isset($arguments[1]) || empty($arguments[1])) {
-                throw new \TYPO3\Eel\FlowQuery\FlowQueryException('findByDateintervall() needs a date to filter in format for', 1460741060);
+                throw new \Neos\Eel\FlowQuery\FlowQueryException('findByDateintervall() needs a date to filter in format for', 1460741060);
             }
 
             // todo pretty dirty & rough implementation right now, make this cleaner
